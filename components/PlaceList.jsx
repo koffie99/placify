@@ -1,6 +1,7 @@
 "use client"
 import { CalendarMonthOutlined, LocationOn, ThumbUp, ThumbUpAltOutlined } from '@mui/icons-material';
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const PlaceList = () => {
   const [places, setPlaces] = useState([]);
@@ -45,7 +46,7 @@ const PlaceList = () => {
 
   return (
     <div className='flex gap-3 flex-wrap justify-center'>
-      {loading ? 'Loading Places...' : places.map((place) => (
+      {loading ? <Image width={100} height={100} alt='loading anim' src='/loading.gif'/> : places.map((place) => (
         <div key={place.id} className='bg-white p-5 rounded w-[95%] md:w-[300px] flex flex-col justify-between'>
           <div className='flex flex-col gap-2'>
             <h1 className='font-semibold text-lg'>{place.name}</h1>
