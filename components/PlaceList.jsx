@@ -49,20 +49,20 @@ const PlaceList = () => {
       {loading ? <Image width={40} height={40} alt='loading anim' src='/loading.gif'/> : places.map((place) => (
         <div key={place.id} className='bg-white p-5 rounded w-[95%] md:w-[300px] flex flex-col justify-between'>
           <div className='flex flex-col gap-2'>
-            <h1 className='font-semibold text-lg'>{place.name}</h1>
-            <p>{place.desc}</p>
+            <h1 className='font-medium text-lg text-[#252525]'>{place.name}</h1>
+            <p className='font-thin text-sm'>{place.desc}</p>
           </div>
           <div className='flex flex-col gap-2 mt-3'>
-            <div className='flex items-center gap-1 text-sm text-[#818181]'>
+            <div className='flex items-center gap-1 text-sm text-[mediumseagreen]'>
               <LocationOn />
               <p>{place.location}</p>
             </div>
-            <div className='flex items-center gap-1 text-sm text-[#818181]'>
+            <div className='flex items-center gap-1 text-[12px] text-[#818181]'>
               <CalendarMonthOutlined />
               <p>{place.dateCreated}</p>
             </div>
             <div className='flex items-center justify-between mt-3'>
-              <div className='flex items-center gap-1 text-[mediumseagreen] cursor-pointer'>
+              <div className='flex items-center gap-1 text-[#252525] cursor-pointer'>
                 <div onClick={handleLike}>
                   {
                     liked ? <ThumbUp /> : <ThumbUpAltOutlined />

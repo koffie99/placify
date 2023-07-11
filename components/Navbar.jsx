@@ -1,5 +1,5 @@
 "use client"
-import { DarkModeOutlined, LightModeOutlined, SearchOutlined } from '@mui/icons-material'
+import { DarkModeOutlined, LightModeOutlined, LocationOn, SearchOutlined } from '@mui/icons-material'
 import React, { useState, useEffect } from 'react'
 
 const Navbar = () => {
@@ -46,27 +46,22 @@ const Navbar = () => {
     <div className='h-[60vh] p-11 text-white flex flex-col gap-10 justify-evenly' id='nav'>
         <div className='flex items-center justify-between'>
           <h1 className='font-bold'>Placify</h1>
-          <div onClick={handleMode} className='cursor-pointer bg-[#183642] p-3 rounded-full'>
+          <div onClick={handleMode} className='cursor-pointer'>
             {
               lightMode ? <DarkModeOutlined /> : <LightModeOutlined />
             }
           </div>
         </div>
-        <div className='flex flex-col justify-center gap-5'>
-          <h1 className='font-bold text-4xl text-center'>Let's take a trip to {loading ? '' : places.length} beautiful places today!</h1>
-          {/* <form action="" className='flex items-center justify-center'>
-            <div className={`p-3 rounded-md bg-white flex items-center justify-between  ${outline ? 'bg-transparent ring-1 ring-white text-white' : 'bg-white'}`} onFocus={handleOutline}>
-              <input type="text" placeholder='Search Pacify...' className={`outline-none w-[80%] md:w-[100%] ${outline ? 'bg-transparent' : 'bg-white'}`} onFocus={handleOutline}/>
-              <SearchOutlined className='text-[#818181]'/>
-            </div>
-          </form> */}
-          <form action="">
-            <div onFocus={handleOutline} className={`flex items-center justify-between p-3 rounded-md ${outline ? 'ring-1 ring-white bg-tranparent text-white': 'bg-white text-[#818181]'}`}>
-                <div className='flex items-center gap-2'>
-                  <SearchOutlined/>
-                  <input type="text" placeholder='Search a place...' className='bg-transparent outline-none'/>
+        <div className='flex items-center flex-col justify-center gap-5'>
+          <h1 className='font-bold md:text-6xl md:w-[60%] text-4xl text-center'>Let's take a trip to {loading ? '' : places.length} beautiful places today!</h1>
+          <form action="" className='md:w-[55%]'>
+            <div onFocus={handleOutline} className={`flex items-center text-center justify-between p-3 rounded-md ${outline ? 'ring-1 ring-white bg-tranparent text-white': 'bg-white text-[#818181]'}`}>
+                <div className='flex items-center gap-2 w-full'>
+                  {/* <SearchOutlined/> */}
+                  <LocationOn />
+                  <input type="text" placeholder='Search a place...' className='bg-transparent outline-none w-full'/>
                 </div>
-                <div></div>
+                <div onFocus={handleOutline}></div>
             </div>
           </form>
         </div>
