@@ -62,8 +62,11 @@ const Navbar = () => {
           </form> */}
           <form action="">
             <div onFocus={handleOutline} className={`flex items-center justify-between p-3 rounded-md ${outline ? 'ring-1 ring-white bg-tranparent text-white': 'bg-white text-[#818181]'}`}>
-                <input type="text" placeholder='Search a place...' className='bg-transparent outline-none'/>
-                <SearchOutlined/>
+                <div className='flex items-center gap-2'>
+                  <SearchOutlined/>
+                  <input type="text" placeholder='Search a place...' className='bg-transparent outline-none'/>
+                </div>
+                <div></div>
             </div>
           </form>
         </div>
