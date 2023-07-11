@@ -54,10 +54,16 @@ const Navbar = () => {
         </div>
         <div className='flex flex-col justify-center gap-5'>
           <h1 className='font-bold text-4xl text-center'>Let's take a trip to {loading ? '' : places.length} beautiful places today!</h1>
-          <form action="" className='flex items-center justify-center'>
-            <div className={`p-3 rounded-md bg-white flex items-center justify-between w-full md:w-[50%] ${outline ? 'bg-transparent ring-1 ring-white text-white' : 'bg-white'}`} onFocus={handleOutline}>
+          {/* <form action="" className='flex items-center justify-center'>
+            <div className={`p-3 rounded-md bg-white flex items-center justify-between  ${outline ? 'bg-transparent ring-1 ring-white text-white' : 'bg-white'}`} onFocus={handleOutline}>
               <input type="text" placeholder='Search Pacify...' className={`outline-none w-[80%] md:w-[100%] ${outline ? 'bg-transparent' : 'bg-white'}`} onFocus={handleOutline}/>
               <SearchOutlined className='text-[#818181]'/>
+            </div>
+          </form> */}
+          <form action="">
+            <div onFocus={handleOutline} className={`flex items-center justify-between p-3 rounded-md ${outline ? 'ring-1 ring-white bg-tranparent text-white': 'bg-white text-[#818181]'}`}>
+                <input type="text" placeholder='Search a place...' className='bg-transparent outline-none'/>
+                <SearchOutlined/>
             </div>
           </form>
         </div>
