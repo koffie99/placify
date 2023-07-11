@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 #nav{
-  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('/place.webp') center center;
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('/sea.webp') center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
